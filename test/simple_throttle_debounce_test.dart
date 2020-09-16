@@ -3,14 +3,18 @@ import 'package:test/test.dart';
 
 void main() {
   group('A group of tests', () {
-    Awesome awesome;
+    var simpleTask = () => print('simpleTask');
+    var throttleSimpleTask, debounceSimpleTask;
+    var interval = 1000;
 
     setUp(() {
-      awesome = Awesome();
+      throttleSimpleTask = throttle(simpleTask, interval);
+      debounceSimpleTask = debounce(simpleTask, interval);
     });
 
-    test('First Test', () {
-      expect(awesome.isAwesome, isTrue);
+    test('Test return type', () {
+      expect(throttleSimpleTask.runtimeType, dynamic);
+      expect(debounceSimpleTask.runtimeType, dynamic);
     });
   });
 }
