@@ -35,3 +35,9 @@ void main() async {
 Please file feature requests and bugs at the [issue tracker][tracker].
 
 [tracker]: https://github.com/liudonghua123/simple_throttle_debounce/issues
+
+## License
+
+MIT License
+
+Copyright (c) 2020 liudonghua
