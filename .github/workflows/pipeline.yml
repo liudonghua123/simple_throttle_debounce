@@ -4,18 +4,47 @@ on:
   push:
     branches:
       - master
-    tags:
-      - "*"
 
 jobs:
   publish_simple_throttle_debounce:
-    runs-on: ubuntu-latest
+    env:
+      CREDENTIAL_JSON: ${{ secrets.CREDENTIAL_JSON }}
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
+
+      - name: Branch name
+        id: branch_name
+        run: |
+          echo ::set-output name=SOURCE_NAME::${GITHUB_REF#refs/*/}
+          echo ::set-output name=SOURCE_BRANCH::${GITHUB_REF#refs/heads/}
+          echo ::set-output name=SOURCE_TAG::${GITHUB_REF#refs/tags/}
+
+      - uses: actions/setup-java@v1
+        with:
+          java-version: "8.x"
+      - uses: subosito/flutter-action@v1
+        with:
+          channel: "dev"
+
+      - name: Enable web/desktop support
+        run: |
+          flutter config --enable-web
+          flutter config --enable-macos-desktop
+          flutter config --enable-linux-desktop
+          flutter config --enable-windows-desktop
+
+      - name: Copy credentials
+        run: |
+          mkdir -p ~/.pub-cache 
+          cat <<EOF > ~/.pub-cache/credentials.json 
+            $CREDENTIAL_JSON 
+          EOF
+          cat ~/.pub-cache/credentials.json
+
       - name: ">> publish simple_throttle_debounce <<"
         id: publish
-        uses: liudonghua123/dart-package-publisher@dev
-        with:
-          credentialJson: ${{ secrets.CREDENTIAL_JSON }}
-          relativePath: .
-          skipTests: true
+        run: |
+          flutter pub get
+          flutter pub publish -n
+          flutter pub publish
