@@ -38,7 +38,7 @@ jobs:
         run: |
           mkdir -p ~/.pub-cache
           echo $CREDENTIAL_JSON > ~/.pub-cache/credentials.json
-          cat ~/.pub-cache/credentials.jsondebug
+          cat ~/.pub-cache/credentials.json
 
       - name: ">> publish simple_throttle_debounce <<"
         id: publish
