@@ -6,3 +6,7 @@
 
 - Update description
 - Bump version
+
+## 1.0.1
+
+- Update description

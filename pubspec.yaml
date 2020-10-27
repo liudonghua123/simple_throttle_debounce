@@ -1,5 +1,5 @@
 name: simple_throttle_debounce
-description: It's a simple pure dart package which implement throttle and debounce functionality, and it's a dart rewrite work of the original js version (https://programmingwithmosh.com/javascript/javascript-throttle-and-debounce-patterns/)
+description: "It's a simple pure dart package which implements throttle/debounce functionality, and it's a rewrite work of the original js version (JavaScript patterns: Throttle and Debounce)"
 version: 1.0.0
 repository: https://github.com/liudonghua123/simple_throttle_debounce
 
