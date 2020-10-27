@@ -43,6 +43,6 @@ jobs:
       - name: ">> publish simple_throttle_debounce <<"
         id: publish
         run: |
-          flutter pub get
-          flutter pub publish -n
-          flutter pub publish
+          pub get
+          pub publish -n
+          pub publish
