@@ -36,6 +36,11 @@ Please file feature requests and bugs at the [issue tracker][tracker].
 
 [tracker]: https://github.com/liudonghua123/simple_throttle_debounce/issues
 
+## References
+
+- https://programmingwithmosh.com/javascript/javascript-throttle-and-debounce-patterns/
+- https://www.telerik.com/blogs/debouncing-and-throttling-in-javascript
+
 ## License
 
 MIT License
