@@ -1,9 +1,13 @@
 import 'dart:async';
 import './var_args_function.dart';
 
-/// throttle high order function, this is a dart implementation of 
-/// https://programmingwithmosh.com/javascript/javascript-throttle-and-debounce-patterns/
-/// https://www.telerik.com/blogs/debouncing-and-throttling-in-javascript
+/// throttle high order function.
+///
+/// This function accept a [callback] function and a [interval] in miliseconds unit.
+///
+/// It is a dart implementation of throttle, see more details on:
+/// - https://programmingwithmosh.com/javascript/javascript-throttle-and-debounce-patterns/
+/// - https://www.telerik.com/blogs/debouncing-and-throttling-in-javascript
 dynamic throttle(Function callback, int interval) {
   var enableCall = true;
   return VarArgsFunction((List<dynamic>? positionalArguments, [Map<Symbol, dynamic>? namedArguments]) {
@@ -14,8 +18,11 @@ dynamic throttle(Function callback, int interval) {
   });
 }
 
-
-/// debounce high order function, this is a dart implementation of 
+/// debounce high order function.
+///
+/// This function accept a [callback] function and a [interval] in miliseconds unit.
+///
+/// It is a dart implementation of debounce, see more details on:
 /// https://programmingwithmosh.com/javascript/javascript-throttle-and-debounce-patterns/
 /// https://www.telerik.com/blogs/debouncing-and-throttling-in-javascript
 dynamic debounce(Function callback, int interval) {
