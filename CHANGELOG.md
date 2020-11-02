@@ -14,3 +14,7 @@
 ## 1.0.2
 
 - Update doc comments
+
+## 1.0.3
+
+- Disable experiment non-nullable features
