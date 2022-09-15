@@ -11,7 +11,7 @@ import './var_args_function.dart';
 dynamic throttle(Function callback, int interval) {
   var enableCall = true;
   return VarArgsFunction((List<dynamic> positionalArguments,
-      [Map<Symbol, dynamic> namedArguments]) {
+      [Map<Symbol, dynamic>? namedArguments]) {
     if (!enableCall) return;
     enableCall = false;
     Function.apply(callback, positionalArguments, namedArguments);
@@ -27,9 +27,9 @@ dynamic throttle(Function callback, int interval) {
 /// https://programmingwithmosh.com/javascript/javascript-throttle-and-debounce-patterns/
 /// https://www.telerik.com/blogs/debouncing-and-throttling-in-javascript
 dynamic debounce(Function callback, int interval) {
-  Timer debounceTimeoutId;
+  Timer? debounceTimeoutId;
   return VarArgsFunction((List<dynamic> positionalArguments,
-      [Map<Symbol, dynamic> namedArguments]) {
+      [Map<Symbol, dynamic>? namedArguments]) {
     debounceTimeoutId?.cancel();
     debounceTimeoutId = Timer(Duration(milliseconds: interval),
         () => Function.apply(callback, positionalArguments, namedArguments));

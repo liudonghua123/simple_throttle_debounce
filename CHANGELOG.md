@@ -18,3 +18,7 @@
 ## 1.0.3
 
 - Disable experiment non-nullable features
+
+## 1.0.4
+
+- Support null-safety features

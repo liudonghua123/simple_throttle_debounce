@@ -1,11 +1,11 @@
 name: simple_throttle_debounce
 description: "It's a simple pure dart package which implements throttle/debounce functionality, and it's a rewrite work of the original js version (JavaScript patterns: Throttle and Debounce)"
-version: 1.0.3
+version: 1.0.4
 repository: https://github.com/liudonghua123/simple_throttle_debounce
 
 environment:
-  sdk: ">=2.10.0 <3.0.0"
+  sdk: '>=2.12.0 <3.0.0'
 
 dev_dependencies:
-  pedantic: ^1.9.0
-  test: ^1.14.4
+  pedantic: ^1.11.1
+  test: ^1.21.6

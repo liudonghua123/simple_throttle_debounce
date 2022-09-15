@@ -4,7 +4,7 @@
 // https://github.com/dart-lang/language/issues/157
 
 typedef VarArgsCallback = dynamic Function(List<dynamic> positionalArguments,
-    [Map<Symbol, dynamic> namedArguments]);
+    [Map<Symbol, dynamic>? namedArguments]);
 
 class VarArgsFunction {
   final VarArgsCallback callback;
